@@ -2,7 +2,7 @@ import turtle
 from .circle import Circle
 
 
-class BikeWheel(Circle):
+class Wheel(Circle):
     def __init__(self, *args, spoke_size: int, **kwargs):
         super().__init__(*args, **kwargs)
         self.__spoke_size = spoke_size
@@ -25,8 +25,8 @@ def main() -> None:
     screen.bgcolor("white")
     pen = turtle.Turtle()
     pen.speed(10)
-    BikeWheel(spoke_size=3, screen=screen, pen=pen, stroke_size=10, radius=120, position=(-200, 0)).draw()
-    BikeWheel(spoke_size=3, screen=screen, pen=pen, stroke_size=10, radius=120, position=(200, 0)).draw()
+    Wheel(spoke_size=3, screen=screen, pen=pen, stroke_size=10, radius=120, position=(-200, 0)).draw()
+    Wheel(spoke_size=3, screen=screen, pen=pen, stroke_size=10, radius=120, position=(200, 0)).draw()
     pen.hideturtle()
 
     screen.exitonclick()

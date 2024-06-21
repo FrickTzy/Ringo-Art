@@ -2,7 +2,7 @@ import turtle
 from .rectangle import Rectangle
 
 
-class BikeHandle(Rectangle):
+class Handle(Rectangle):
     __WIDTH = 100
     __HEIGHT = 30
 
@@ -20,7 +20,7 @@ def main() -> None:
     screen = turtle.Screen()
     screen.bgcolor("white")
     pen = turtle.Turtle()
-    BikeHandle(screen=screen, pen=pen, size=1.2, color="blue", stroke_size=5).draw(fill_color=True)
+    Handle(screen=screen, pen=pen, size=1.2, color="blue", stroke_size=5).draw(fill_color=True)
     pen.hideturtle()
     screen.exitonclick()
 

@@ -1,4 +1,4 @@
-from .bicycle_parts import Tube, BikeSeat, BikeWheel, BikeHandle, Pedal
+from .bicycle_parts import Tube, Seat, Wheel, Handle, Pedal
 from turtle import Screen, Turtle
 
 
@@ -6,19 +6,19 @@ class Bicycle:
     def __init__(self, screen: Screen, pen: Turtle, position: tuple[int, int] = (0, 0)):
         self.__x, self.__y = position
         self.__tube = Tube(screen=screen, pen=pen, stroke_size=12)
-        self.__left_wheel = BikeWheel(
+        self.__left_wheel = Wheel(
             spoke_size=3, screen=screen, pen=pen, stroke_size=12, radius=120,
             position=(self.__x - 210, self.__y - 150)
         )
-        self.__right_wheel = BikeWheel(
+        self.__right_wheel = Wheel(
             spoke_size=3, screen=screen, pen=pen, stroke_size=12, radius=120,
             position=(self.__x + 190, self.__y - 150)
         )
-        self.__handle = BikeHandle(
+        self.__handle = Handle(
             screen=screen, pen=pen, size=0.49, fill_color="red", stroke_size=3,
             position=(self.__x + 52, self.__y + 224)
         )
-        self.__seat = BikeSeat(
+        self.__seat = Seat(
             screen=screen, pen=pen, stroke_size=3, fill_color="red",
             size=1, position=(self.__x - 60, self.__y + 180)
         )

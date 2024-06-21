@@ -2,7 +2,7 @@ from turtle import Screen, Turtle
 from bicycle import Bicycle
 
 
-def set_position(screen: Screen):
+def set_position(screen: Screen) -> None:
     screen.cv._rootwindow.geometry("+300+150")
 
 

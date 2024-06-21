@@ -2,10 +2,11 @@ import turtle
 from .turtle_art import TurtleArt
 
 
-class BikeSeat(TurtleArt):
+class Seat(TurtleArt):
     __HYPOTENUSE_ANGLE, __HYPOTENUSE_LENGTH = 158, 90
     __ADJACENT_ANGLE, __ADJACENT_LENGTH = 80, 40
     __OPPOSITE_ANGLE, __OPPOSITE_LENGTH = 122, 105
+    __ADDITIONAL_ANGLE = 17
 
     def __init__(self, screen: turtle.Screen, pen: turtle.Turtle, stroke_size: int,
                  color: str = "black", position: tuple[int, int] = (0, 0), size: float = 1, fill_color: str = "black"):
@@ -16,7 +17,7 @@ class BikeSeat(TurtleArt):
     def _draw_art(self) -> None:
         self._go_to_position()
         self.pen.setheading(self.__HYPOTENUSE_ANGLE)
-        self.pen.left(17)
+        self.pen.left(self.__ADDITIONAL_ANGLE)
         self.pen.forward(self.__get_hypotenuse_length)
         self.pen.left(self.__ADJACENT_ANGLE)
         self.pen.forward(self.__get_adjacent_length)
@@ -41,8 +42,7 @@ def main() -> None:
     screen.bgcolor("white")
     pen = turtle.Turtle()
     pen.speed(5)
-    BikeSeat(screen=screen, pen=pen, stroke_size=3, fill_color="yellow", size=4).draw(fill_color=True)
-
+    Seat(screen=screen, pen=pen, stroke_size=3, fill_color="yellow", size=4).draw(fill_color=True)
     pen.hideturtle()
     screen.exitonclick()
 
