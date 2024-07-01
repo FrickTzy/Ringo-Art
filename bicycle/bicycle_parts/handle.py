@@ -1,5 +1,5 @@
 import turtle
-from .rectangle import Rectangle
+from turtle_art_manager import Rectangle
 
 
 class Handle(Rectangle):

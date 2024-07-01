@@ -1,5 +1,5 @@
 import turtle
-from .turtle_art import TurtleArt
+from turtle_art_manager import TurtleArt
 
 
 class Seat(TurtleArt):
@@ -16,13 +16,13 @@ class Seat(TurtleArt):
 
     def _draw_art(self) -> None:
         self._go_to_position()
-        self.pen.setheading(self.__HYPOTENUSE_ANGLE)
-        self.pen.left(self.__ADDITIONAL_ANGLE)
-        self.pen.forward(self.__get_hypotenuse_length)
-        self.pen.left(self.__ADJACENT_ANGLE)
-        self.pen.forward(self.__get_adjacent_length)
-        self.pen.left(self.__OPPOSITE_ANGLE)
-        self.pen.forward(self.__get_opposite_length)
+        self._pen.setheading(self.__HYPOTENUSE_ANGLE)
+        self._pen.left(self.__ADDITIONAL_ANGLE)
+        self._pen.forward(self.__get_hypotenuse_length)
+        self._pen.left(self.__ADJACENT_ANGLE)
+        self._pen.forward(self.__get_adjacent_length)
+        self._pen.left(self.__OPPOSITE_ANGLE)
+        self._pen.forward(self.__get_opposite_length)
 
     @property
     def __get_hypotenuse_length(self) -> int:

@@ -1,5 +1,5 @@
 import turtle
-from .circle import Circle
+from turtle_art_manager import Circle
 
 
 class Wheel(Circle):
@@ -12,12 +12,12 @@ class Wheel(Circle):
         self.__draw_spokes(num_spokes=20)
 
     def __draw_spokes(self, num_spokes: int):
-        self.pen.pensize(self.__spoke_size)
+        self._pen.pensize(self.__spoke_size)
         for _ in range(num_spokes):
-            self._go_to((self.position[0], self.position[1] + self.radius))
-            self.pen.forward(self.radius)
-            self.pen.backward(self.radius)
-            self.pen.right(360 / num_spokes)
+            self._go_to((self._position[0], self._position[1] + self._radius))
+            self._pen.forward(self._radius)
+            self._pen.backward(self._radius)
+            self._pen.right(360 / num_spokes)
 
 
 def main() -> None:

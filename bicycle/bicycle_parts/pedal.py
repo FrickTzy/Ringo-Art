@@ -1,17 +1,15 @@
-from .rectangle import Rectangle
-from .circle import Circle
-from .turtle_art import TurtleArt
+from turtle_art_manager import TurtleArt, Circle, Rectangle
 from turtle import Screen, Turtle
 
 
 class Pedal(TurtleArt):
     def __init__(self, *args, size: float = 1, **kwargs):
         super().__init__(*args, **kwargs)
-        self.__pedal_circle = PedalCircle(screen=self.screen, pen=self.pen, size=size, pedal_position=self.position,
-                                          fill_color=self.fill_color)
-        self.__pedal_arm = PedalArm(screen=self.screen, pen=self.pen, size=size, position=self.position,
-                                    stroke_size=self.stroke_size)
-        self.__foot_rest = FootRest(screen=self.screen, pen=self.pen, size=size, pedal_position=self.position)
+        self.__pedal_circle = PedalCircle(screen=self._screen, pen=self._pen, size=size, pedal_position=self._position,
+                                          fill_color=self._fill_color)
+        self.__pedal_arm = PedalArm(screen=self._screen, pen=self._pen, size=size, position=self._position,
+                                    stroke_size=self._stroke_size)
+        self.__foot_rest = FootRest(screen=self._screen, pen=self._pen, size=size, pedal_position=self._position)
 
     def _draw_art(self) -> None:
         self.__pedal_circle.draw(fill_color=True)
@@ -43,9 +41,9 @@ class PedalArm(TurtleArt):
 
     def _draw_art(self) -> None:
         self._go_to_position()
-        self.pen.setheading(self.__PEDAL_ARM_ANGLE)
-        self.pen.forward(self.__PEDAL_ARM_LENGTH * self.__size)
-        self.pen.setheading(0)
+        self._pen.setheading(self.__PEDAL_ARM_ANGLE)
+        self._pen.forward(self.__PEDAL_ARM_LENGTH * self.__size)
+        self._pen.setheading(0)
 
 
 class FootRest(Rectangle):
