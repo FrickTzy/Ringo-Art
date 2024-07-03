@@ -108,7 +108,7 @@ class Sunflower(SizedTurtleArt):
 
 def main() -> None:
     screen = Screen()
-    screen.bgcolor("sky blue")
+    screen.bgcolor("#67b9ea")
     set_position(screen=screen)
     screen.title("Sunflower Art  |  @kurikosancode")
     pen = Turtle()
